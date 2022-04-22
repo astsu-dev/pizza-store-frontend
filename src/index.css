@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-[#fff0c8] hover:bg-[#ffe192] active:bg-[#fff0c8] border-[0.125rem] border-[#000000] rounded-[1rem] cursor-pointer;
+    }
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("./assets/fonts/Pacifico/Pacifico-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./assets/fonts/Rubik/Rubik-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./assets/fonts/Rubik/Rubik-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./assets/fonts/Rubik/Rubik-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Rubik";
+    line-height: 1;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
