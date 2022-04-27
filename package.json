@@ -2,11 +2,13 @@
   "name": "pizza-store-frontend",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://astsu-dev.github.io/pizza-store-frontend/",
   "main": ".src/index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --mode development",
-    "build": "webpack --mode production"
+    "build": "rm -r build && webpack --mode production",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
   "dependencies": {
     "axios": "^0.26.1",
     "react": "^18.0.0",
+    "react-admin": "^4.0.1",
     "react-content-loader": "^6.2.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.30.0",
@@ -41,6 +44,7 @@
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^7.1.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.12",

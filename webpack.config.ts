@@ -1,7 +1,7 @@
+import DotenvWebpackPlugin from "dotenv-webpack";
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import path from "path";
 import { WebpackConfiguration } from "webpack-dev-server";
-import DotenvWebpackPlugin from "dotenv-webpack";
 
 const config: WebpackConfiguration = {
   entry: "./src/index.tsx",
@@ -11,7 +11,7 @@ const config: WebpackConfiguration = {
   },
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "bundle.js",
+    filename: "[fullhash].js",
   },
   module: {
     rules: [
@@ -43,7 +43,7 @@ const config: WebpackConfiguration = {
       filename: "index.html",
       template: path.resolve(__dirname, "public", "index.html"),
     }),
-    new DotenvWebpackPlugin()
+    new DotenvWebpackPlugin(),
   ],
   devServer: {
     historyApiFallback: true,

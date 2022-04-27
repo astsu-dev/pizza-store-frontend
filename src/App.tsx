@@ -4,6 +4,8 @@ import Products from "pages/Products";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+// import AdminPanel from "pages/AdminPanel";
+
 const App: React.FC = () => {
   return (
     <div className="grid gap-[2.5rem] max-w-[87.5rem]">

@@ -4,7 +4,7 @@ import ProductList from "components/ProductList";
 import ProductLoaderList from "components/ProductLoaderList";
 import useAppSelector from "hooks/useAppSelector";
 import { ICartItem } from "models";
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { productsService } from "services";
 import { addCartItem } from "store/cart/actions";
@@ -40,13 +40,17 @@ const Products: React.FC = () => {
     dispatch(setProducts(products));
   };
 
-  useEffect(() => {
+  const fetchData = async () => {
     if (categories.length === 0) {
-      fetchCategories();
+      await fetchCategories();
     }
     if (products.length === 0) {
-      fetchProducts();
+      await fetchProducts();
     }
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   const onAddProductToCart = useCallback((cartItem: ICartItem) => {
@@ -57,9 +61,13 @@ const Products: React.FC = () => {
     dispatch(selectCategory(index));
   }, []);
 
-  const productsByCategory = products.filter(
-    (product) => product.category.id === categories[selectedCategoryIndex].id
-  );
+  const productsByCategory =
+    categories.length === 0
+      ? []
+      : products.filter(
+          (product) =>
+            product.category.id === categories[selectedCategoryIndex].id
+        );
 
   return (
     <main
