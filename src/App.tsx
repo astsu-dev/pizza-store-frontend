@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Footer from "components/Footer";
 import Cart from "pages/Cart";
 import Products from "pages/Products";
 import React from "react";
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="cart" element={<Cart />} />
         <Route path="*" element={<Products />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
