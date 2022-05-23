@@ -9,7 +9,7 @@ interface CategoriesState {
 
 const initialState: CategoriesState = {
   categories: [],
-  selectedCategoryIndex: 1,
+  selectedCategoryIndex: 0,
   loading: false,
 };
 

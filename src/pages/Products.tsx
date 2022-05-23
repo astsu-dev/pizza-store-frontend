@@ -4,7 +4,7 @@ import ProductList from "components/ProductList";
 import ProductLoaderList from "components/ProductLoaderList";
 import useAppSelector from "hooks/useAppSelector";
 import { ICartItem } from "models";
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { productsService } from "services";
 import { addCartItem } from "store/cart/actions";
