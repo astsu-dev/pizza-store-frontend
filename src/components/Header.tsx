@@ -9,7 +9,7 @@ const Header: React.FC = () => (
       <div className="grid grid-flow-col items-center gap-[1.125rem] mr-[1.875rem]">
         <img src={logo} alt="Logo" className="w-[4rem] h-[4rem]" />
         <span className="font-[Pacifico] text-[2rem] hidden md:inline">
-          Pizza Store
+          Presto Pizza
         </span>
       </div>
     </Link>
